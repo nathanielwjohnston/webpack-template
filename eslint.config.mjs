@@ -7,7 +7,24 @@ export default [
   { languageOptions: { globals: globals.browser } },
   pluginJs.configs.recommended,
   {
-    ignores: ["webpack.common.js", "webpack.dev.js", "webpack.prod.js"],
+    ignores: [
+      "webpack.common.js",
+      "webpack.dev.js",
+      "webpack.prod.js",
+      "babel.config.js",
+      "jest.config.js",
+      "__mocks__",
+    ],
+  },
+  {
+    overrides: [
+      {
+        files: ["tests/**/*"],
+        env: {
+          jest: true,
+        },
+      },
+    ],
   },
   // Keep prettier after other configs
   eslintConfigPrettier,
